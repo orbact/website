@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orbact | Future of Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* Semantic Color Tokens */
+        
+        /* Dark Theme (Default) */
+        --bg-page: #0b0b0f;
+        --bg-card: #15161c;
+        --bg-surface: #1e2029;
+        --bg-subtle: rgba(255, 255, 255, 0.05);
+        
+        --text-main: #ffffff;
+        --text-muted: #9ca3af; /* Gray-400 */
+        --text-inverted: #000000;
+        
+        --accent-primary: #7CE7D0; /* Teal */
+        --accent-secondary: #8B7FFF; /* Purple */
+        
+        --accent-primary-rgb: 124, 231, 208;
+        --accent-secondary-rgb: 139, 127, 255;
+        
+        --border-subtle: rgba(255, 255, 255, 0.08);
+        --border-strong: rgba(255, 255, 255, 0.15);
+        
+        --shadow-rgb: 0, 0, 0;
+        --spotlight-color: rgba(255, 255, 255, 0.1);
+        --grid-color: rgba(255, 255, 255, 0.02);
+      }
+
+      /* Light Theme Override */
+      .light {
+        --bg-page: #ffffff;
+        --bg-card: #f8fafc; 
+        --bg-surface: #f1f5f9;
+        --bg-subtle: rgba(0, 0, 0, 0.04);
+        
+        --text-main: #020617; /* Slate-950 */
+        --text-muted: #64748b; /* Slate-500 */
+        --text-inverted: #ffffff;
+        
+        --accent-primary: #0d9488; /* Teal-700 */
+        --accent-secondary: #4f46e5; /* Indigo-600 */
+        
+        --accent-primary-rgb: 13, 148, 136;
+        --accent-secondary-rgb: 79, 70, 229;
+        
+        --border-subtle: rgba(2, 6, 23, 0.08);
+        --border-strong: rgba(2, 6, 23, 0.15);
+        
+        --shadow-rgb: 2, 6, 23;
+        --spotlight-color: rgba(13, 148, 136, 0.08);
+        --grid-color: rgba(2, 6, 23, 0.04);
+      }
+
+      body {
+        background-color: var(--bg-page);
+        color: var(--text-main);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg-page);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--border-strong);
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-muted);
+      }
+
+      /* No Scrollbar Utility */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              bg: {
+                page: 'var(--bg-page)',
+                card: 'var(--bg-card)',
+                surface: 'var(--bg-surface)',
+                subtle: 'var(--bg-subtle)',
+                // Legacy mapping for compatibility
+                dark: 'var(--bg-page)', 
+              },
+              text: {
+                main: 'var(--text-main)',
+                muted: 'var(--text-muted)',
+                inverted: 'var(--text-inverted)',
+              },
+              accent: {
+                primary: 'var(--accent-primary)',
+                secondary: 'var(--accent-secondary)',
+              },
+              border: {
+                DEFAULT: 'var(--border-subtle)',
+                subtle: 'var(--border-subtle)',
+                strong: 'var(--border-strong)',
+              },
+              // Utility aliases
+              muted: 'var(--text-muted)',
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'marquee': 'marquee 25s linear infinite',
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'shine': 'shine 8s linear infinite',
+              'grid-flow': 'gridFlow 20s linear infinite',
+              'grid-flow-lg': 'gridFlowLg 30s linear infinite',
+              'grid-flow-sm': 'gridFlowSm 15s linear infinite',
+              'slide-in-right': 'slideInRight 0.4s ease-out forwards',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              marquee: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-100%)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: 0, transform: 'translateY(20px)' },
+                '100%': { opacity: 1, transform: 'translateY(0)' },
+              },
+              shine: {
+                '0%': { backgroundPosition: '200% center' },
+                '100%': { backgroundPosition: '-200% center' },
+              },
+              gridFlow: {
+                '0%': { backgroundPosition: '0 0' },
+                '100%': { backgroundPosition: '40px 40px' },
+              },
+              gridFlowLg: {
+                '0%': { backgroundPosition: '0 0' },
+                '100%': { backgroundPosition: '64px 64px' },
+              },
+              gridFlowSm: {
+                '0%': { backgroundPosition: '0 0' },
+                '100%': { backgroundPosition: '32px 32px' },
+              },
+              slideInRight: {
+                '0%': { opacity: 0, transform: 'translateX(100%)' },
+                '100%': { opacity: 1, transform: 'translateX(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <script type="importmap">
+{
+  "imports": {
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

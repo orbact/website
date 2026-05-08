@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Sitemap: https://orbact.com/sitemap.xml
+
+# Crawl-delay for polite bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
