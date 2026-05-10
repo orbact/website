@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { Analytics } from '@vercel/analytics/react';
 import Layout from './components/Layout';
 import { ToastProvider } from './components/Toast';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -44,6 +45,7 @@ const App: React.FC = () => {
               </Suspense>
             </Layout>
           </Router>
+          <Analytics />
         </ToastProvider>
       </HelmetProvider>
     </ErrorBoundary>
