@@ -1,0 +1,6 @@
+-- Orbact V2 no longer uses the insecure V1 public-write schema.
+-- Apply the migration in:
+-- supabase/migrations/20260510000000_orbact_v2_cms.sql
+--
+-- That migration creates the CMS tables, Supabase Auth admin allow-list,
+-- secure public-read/admin-write RLS policies, and the site-media bucket.

@@ -1,0 +1,4 @@
+-- Orbact V2 consolidated the full CMS schema into:
+-- supabase/migrations/20260510000000_orbact_v2_cms.sql
+--
+-- Do not use V1 public insert/update/delete policies in production.
